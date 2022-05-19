@@ -1,0 +1,320 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+    font-family: 'Lucida Safontns', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+/* LOGO STYLING STARTS */
+#logo_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60hv;
+    margin: auto;
+    text-align: center;
+    color: whitesmoke;
+    overflow: hidden;
+    width:100vw;
+}
+.logo_width{
+    position: absolute;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    width:100%;
+    margin: auto;
+    top:5vh;
+}
+#logo{
+    align-items: center;
+    height:70px;
+    animation: float 3s ease-in-out infinite;
+    z-index: 2;
+}
+
+
+#logo-rotate{
+    animation: rotate 7s linear infinite;
+    transform-origin: center;
+    transform-box: fill-box;
+}
+#logo-fixed{
+    height: 80px;
+}
+@keyframes rotate{
+    from{
+        transform: rotateY(0deg);
+    }
+    to{
+        transform: rotateY(360deg);
+    }
+}
+
+/* LOGO ends */
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+   }
+   .nav-links{
+       align-items: stretch;
+       width : 100%;
+   }
+    /* NAVBAR MENU */
+    .menu {
+    display: flex;
+    justify-content: right;
+    font-size: 18px;
+    width:100%;
+    padding : 10px 70px;
+   }
+   .extra:hover{
+    background-color: #000000;
+}
+   .menu li a:hover {
+    background-color: #bee2ed;
+    border-radius: 5px;
+    transition: 0.3s ease;
+   }
+   .menu li a{
+    padding: 5px 14px;
+    color: whitesmoke;
+    font-weight: bold;
+   }
+   /* DROPDOWN MENU */
+   .services {
+    position: relative;
+   }
+   .dropdown {
+    background-color: rgb(255, 255, 255);
+    padding: 1em 0;
+    position: absolute; /*WITH RESPECT TO PARENT*/
+    display: none;
+    border-radius: 8px;
+    top: 35px;
+   }
+   .dropdown li + li {
+    margin-top: 10px;
+   }
+   .dropdown li {
+    padding: 0.5em 1em;
+    width: 8em;
+    text-align: center;
+   }
+   .dropdown li:hover {
+    background-color: #37bd7a;
+   }
+   .services:hover .dropdown {
+    display: block;
+   }
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox]{
+    display: none;
+   }
+   /*HAMBURGER MENU*/
+   .hamburger {
+    display: none;
+    font-size: 24px;
+    user-select: none;
+   }
+   /* APPLYING MEDIA QUERIES */
+   @media (max-width: 768px) {
+   .menu {
+    display:none;
+    position: absolute;
+    background-color:#ffffff;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+   }
+   .menu li:hover {
+    display: inline-block;
+    background-color:#4c9e9e;
+    transition: 0.3s ease;
+   }
+   .menu li + li {
+    margin-top: 12px;
+   }
+   input[type=checkbox]:checked ~ .menu{
+    display: block;
+   }
+   .hamburger {
+    display: block;
+   }
+   .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+   }
+   .dropdown li:hover {
+    background-color: #4c9e9e;
+   }
+   }
+/*NAVBAR STYLING END*/
+
+/*INTRODUCTION AND PROFILE STYLING STARTS*/
+.intro{
+    z-index: 2;
+    color: white;
+    justify-content: center;
+    display:flex;
+    overflow: hidden;
+    height:100vh;
+    width:100vw;
+    background-image: radial-gradient(circle, rgba(255, 254, 254, 0.39) 1%, rgb(0, 0, 0) 20%);
+}
+.intro_img{
+    position:absolute;
+    align-items: center;
+    overflow: hidden;
+    opacity: 0.7;
+    z-index: 1;
+    box-sizing: border-box;
+	border: 5px #0E7A93;
+	box-shadow: 0 4px 30px 0px rgba(0,0,0,1);
+}
+.intro_img img{
+    height: 100vh;
+    width: 100vw;
+    z-index: 0;
+    overflow: hidden;
+}
+.intro_text{
+    text-align: center;
+    z-index: 2;
+    margin: auto;
+}
+.profiles{
+       margin:auto;
+       position: relative;
+       text-align: center;
+       color : black;
+       z-index: 2;
+   }
+
+   h3 {
+       padding-top: 10px; 
+    } 
+   #headings{
+       font-size: 30px;
+       font-weight: bold;
+       padding :5px 5px;
+   }
+   #intro_lines{
+       font-size: 20px;
+       padding-top: 10px;
+   }
+   .profile_links{
+    display: flex;
+    align-items: stretch;
+    margin: 0 auto;
+    overflow: hidden;
+   }
+   .profile_list{
+       display:flex;
+       justify-content: space-between;
+       width : 100%; 
+       overflow: hidden;
+   }
+   .profile_list :hover > img{
+       width : 300px;
+       height : 200px;
+       animation: float 3s ease-in-out infinite;
+   }
+   @keyframes float {
+	0% {
+		
+		transform: translatey(0px);
+	}
+	50% {
+		
+		transform: translatey(-10px);
+	}
+	100% {
+		
+		transform: translatey(0px);
+	}
+}
+   .profile_list :hover > p{
+       text-decoration: underline;
+   }
+   .profile_list p{
+       font-size: medium;
+       color : whitesmoke;
+       padding-top: 5px;
+   }
+   .profile_links li{
+    display: inline;
+    text-align: center;
+    justify-content: space-between;
+    font-size: 22px;
+   }
+   .profile_container{
+       height:40vh;
+       width:50vw;
+   }
+   .profile_vid{
+       width:50vw;
+       height: 40vh;
+   }
+   #profile_img{
+    width : "100px";
+    height : "100px";
+	box-sizing: border-box;
+	border: 5px #0E7A93;
+	overflow: hidden;
+	box-shadow: 0 5px 20px 0px rgba(0,0,0,1);
+   }
+
+/*AIRCRAFT PAGE STYLES*/
+.Aircraft_body{
+    padding : 20px 160px;
+    width: 100%;
+}
+.Aircraft_slideshow{
+    display:inline-block;
+    width : 100%;
+    position: relative;
+    text-align: left;
+    background-image: linear-gradient(to left, rgba(0,0,0,0) 0%,rgba(0,0,0,0.65) 100%);  
+}
+.Aircraft_body img{
+    width : 100%;
+    max-height: 550px;
+    height :auto;
+    position:relative;
+    z-index:-1;
+    display:block;
+    box-sizing: border-box;
+	border: 5px #0E7A93;
+	overflow: hidden;
+	box-shadow: 0 5px 20px 0px rgb(161, 161, 161);
+}
+.Aircraft_slideshow_text{
+    position: absolute;
+    width: 40%;
+    font-weight: bold;
+    top: 20%;
+    left: 5%;
+    color:whitesmoke;
+}
+
+
+
+/*AIRCRAFT PAGE STYLES*/
